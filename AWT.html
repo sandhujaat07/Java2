@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #ffe4f5;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the code block */
+        .content pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Wraps long lines */
+            margin: 0 auto; /* Centering the code block */
+            max-width: 80%; /* Setting a maximum width */
+        }
+
+        .content code {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .content pre {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java_codes.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+
+        <section id="1">
+            <h2>1. Create a simple AWT application that displays a button with FlowLayout manager</h2>
+            <pre><code>
+        import java.awt.*;
+        import java.awt.event.*;
+        
+        public class ButtonFlowLayout extends Frame {
+            ButtonFlowLayout() {
+                setLayout(new FlowLayout());
+                Button b = new Button("Click Me");
+                add(b);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new ButtonFlowLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="2">
+            <h2>2. Create a simple AWT application that displays a button with Custom Layout</h2>
+            <pre><code>
+        import java.awt.*;
+        import java.awt.event.*;
+        
+        public class ButtonCustomLayout extends Frame {
+            ButtonCustomLayout() {
+                setLayout(null);
+                Button b = new Button("Click Me");
+                b.setBounds(100, 100, 100, 50);
+                add(b);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new ButtonCustomLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="3">
+            <h2>3. Create a simple AWT application that displays multiple buttons with BorderLayout manager (North, East, West, South, Center)</h2>
+            <pre><code>
+        import java.awt.*;
+        import java.awt.event.*;
+        
+        public class BorderLayoutButtons extends Frame {
+            BorderLayoutButtons() {
+                setLayout(new BorderLayout());
+                add(new Button("North"), BorderLayout.NORTH);
+                add(new Button("South"), BorderLayout.SOUTH);
+                add(new Button("East"), BorderLayout.EAST);
+                add(new Button("West"), BorderLayout.WEST);
+                add(new Button("Center"), BorderLayout.CENTER);
+                setSize(400, 400);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new BorderLayoutButtons();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="4">
+            <h2>4. Create a simple AWT application that displays a TextField with FlowLayout manager</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class TextFieldFlowLayout extends Frame {
+            TextFieldFlowLayout() {
+                setLayout(new FlowLayout());
+                TextField tf = new TextField(20);
+                add(tf);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new TextFieldFlowLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="5">
+            <h2>5. Create a simple AWT application that displays a TextField with Custom Layout</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class TextFieldCustomLayout extends Frame {
+            TextFieldCustomLayout() {
+                setLayout(null);
+                TextField tf = new TextField(20);
+                tf.setBounds(100, 100, 150, 50);
+                add(tf);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new TextFieldCustomLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="6">
+            <h2>6. Create a simple AWT application that displays a Checkbox with FlowLayout manager</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class CheckboxFlowLayout extends Frame {
+            CheckboxFlowLayout() {
+                setLayout(new FlowLayout());
+                Checkbox cb = new Checkbox("Check Me");
+                add(cb);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new CheckboxFlowLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="7">
+            <h2>7. Create a simple AWT application that displays a Checkbox with Custom Layout</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class CheckboxCustomLayout extends Frame {
+            CheckboxCustomLayout() {
+                setLayout(null);
+                Checkbox cb = new Checkbox("Check Me");
+                cb.setBounds(100, 100, 100, 50);
+                add(cb);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new CheckboxCustomLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="8">
+            <h2>8. Create a simple AWT application that displays a Label with FlowLayout manager</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class LabelFlowLayout extends Frame {
+            LabelFlowLayout() {
+                setLayout(new FlowLayout());
+                Label label = new Label("Hello");
+                add(label);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new LabelFlowLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="9">
+            <h2>9. Create a simple AWT application that displays a Label with Custom Layout</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class LabelCustomLayout extends Frame {
+            LabelCustomLayout() {
+                setLayout(null);
+                Label label = new Label("Hello");
+                label.setBounds(100, 100, 100, 50);
+                add(label);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new LabelCustomLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="10">
+            <h2>10. Create a simple AWT application that displays a Choice with FlowLayout manager</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class ChoiceFlowLayout extends Frame {
+            ChoiceFlowLayout() {
+                setLayout(new FlowLayout());
+                Choice choice = new Choice();
+                choice.add("Option 1");
+                choice.add("Option 2");
+                choice.add("Option 3");
+                add(choice);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new ChoiceFlowLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="11">
+            <h2>11. Create a simple AWT application that displays a Choice with Custom Layout</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class ChoiceCustomLayout extends Frame {
+            ChoiceCustomLayout() {
+                setLayout(null);
+                Choice choice = new Choice();
+                choice.add("Option 1");
+                choice.add("Option 2");
+                choice.add("Option 3");
+                choice.setBounds(100, 100, 100, 50);
+                add(choice);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new ChoiceCustomLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="12">
+            <h2>12. Create a simple AWT application that displays a CheckboxGroup with FlowLayout manager</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class CheckboxGroupFlowLayout extends Frame {
+            CheckboxGroupFlowLayout() {
+                setLayout(new FlowLayout());
+                CheckboxGroup group = new CheckboxGroup();
+                Checkbox cb1 = new Checkbox("Option 1", group, false);
+                Checkbox cb2 = new Checkbox("Option 2", group, false);
+                add(cb1);
+                add(cb2);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new CheckboxGroupFlowLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="13">
+            <h2>13. Create a simple AWT application that displays a CheckboxGroup with Custom Layout</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class CheckboxGroupCustomLayout extends Frame {
+            CheckboxGroupCustomLayout() {
+                setLayout(null);
+                CheckboxGroup group = new CheckboxGroup();
+                Checkbox cb1 = new Checkbox("Option 1", group, false);
+                Checkbox cb2 = new Checkbox("Option 2", group, false);
+                cb1.setBounds(100, 100, 100, 50);
+                cb2.setBounds(100, 150, 100, 50);
+                add(cb1);
+                add(cb2);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new CheckboxGroupCustomLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="14">
+            <h2>14. Create a simple AWT application that displays a List with FlowLayout manager</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class ListFlowLayout extends Frame {
+            ListFlowLayout() {
+                setLayout(new FlowLayout());
+                List list = new List();
+                list.add("Item 1");
+                list.add("Item 2");
+                list.add("Item 3");
+                add(list);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new ListFlowLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="15">
+            <h2>15. Create a simple AWT application that displays a List with Custom Layout</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class ListCustomLayout extends Frame {
+            ListCustomLayout() {
+                setLayout(null);
+                List list = new List();
+                list.add("Item 1");
+                list.add("Item 2");
+                list.add("Item 3");
+                list.setBounds(100, 100, 100, 100);
+                add(list);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new ListCustomLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="16">
+            <h2>16. Create a simple AWT application that displays a TextArea with FlowLayout manager</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class TextAreaFlowLayout extends Frame {
+            TextAreaFlowLayout() {
+                setLayout(new FlowLayout());
+                TextArea ta = new TextArea(5, 20);
+                add(ta);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new TextAreaFlowLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="17">
+            <h2>17. Create a simple AWT application that displays a TextArea with Custom Layout</h2>
+            <pre><code>
+        import java.awt.*;
+        
+        public class TextAreaCustomLayout extends Frame {
+            TextAreaCustomLayout() {
+                setLayout(null);
+                TextArea ta = new TextArea(5, 20);
+                ta.setBounds(100, 100, 150, 100);
+                add(ta);
+                setSize(300, 300);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new TextAreaCustomLayout();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="18">
+            <h2>18. Create a simple AWT application design a calculator that displays buttons, TextField with GridLayout manager</h2>
+            <pre><code>
+        import java.awt.*;
+        import java.awt.event.*;
+        
+        public class Calculator extends Frame {
+            Calculator() {
+                setLayout(new GridLayout(4, 4));
+                TextField tf = new TextField();
+                add(tf);
+                for (int i = 1; i <= 9; i++) {
+                    add(new Button(String.valueOf(i)));
+                }
+                add(new Button("0"));
+                add(new Button("+"));
+                add(new Button("-"));
+                add(new Button("*"));
+                add(new Button("/"));
+                add(new Button("="));
+                setSize(400, 400);
+                setVisible(true);
+            }
+        
+            public static void main(String[] args) {
+                new Calculator();
+            }
+        }
+            </code></pre>
+        </section>
+        
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #ffe4f5;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the code block */
+        .content pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Wraps long lines */
+            margin: 0 auto; /* Centering the code block */
+            max-width: 80%; /* Setting a maximum width */
+        }
+
+        .content code {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .content pre {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java_codes.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+
+        <section id="1">
+            <h2>1. Write a Java method to find the smallest number among three numbers</h2>
+            <pre><code>
+        public class SmallestNumber {
+            public static void main(String[] args) {
+                System.out.println("Smallest number: " + findSmallest(10, 20, 5));
+            }
+        
+            static int findSmallest(int a, int b, int c) {
+                return Math.min(a, Math.min(b, c));
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="2">
+            <h2>2. Write a Java method to compute the average of three numbers</h2>
+            <pre><code>
+        public class AverageCalculator {
+            public static void main(String[] args) {
+                System.out.println("Average: " + computeAverage(10, 20, 30));
+            }
+        
+            static double computeAverage(int a, int b, int c) {
+                return (a + b + c) / 3.0;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="3">
+            <h2>3. Write a Java method to display the middle character of a string</h2>
+            <pre><code>
+        public class MiddleCharacter {
+            public static void main(String[] args) {
+                System.out.println("Middle character(s): " + getMiddleCharacter("example"));
+            }
+        
+            static String getMiddleCharacter(String str) {
+                int length = str.length();
+                if (length % 2 == 0) {
+                    return String.valueOf(str.charAt(length / 2 - 1));
+                } else {
+                    return str.charAt(length / 2) + "" + str.charAt(length / 2 + 1);
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="4">
+            <h2>4. Write a Java method to count all the words in a string</h2>
+            <pre><code>
+        public class WordCounter {
+            public static void main(String[] args) {
+                System.out.println("Word count: " + countWords("This is a sample string."));
+            }
+        
+            static int countWords(String str) {
+                return str.split("\\s+").length;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="5">
+            <h2>5. Write a Java method to compute the future investment value at a given interest rate for a specified number of years</h2>
+            <pre><code>
+        public class FutureInvestment {
+            public static void main(String[] args) {
+                System.out.println("Future value: " + computeFutureValue(1000, 0.05, 10));
+            }
+        
+            static double computeFutureValue(double principal, double interestRate, int years) {
+                return principal * Math.pow(1 + interestRate, years);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="6">
+            <h2>6. Write a Java method to print characters between two characters (i.e. A to P)</h2>
+            <pre><code>
+        public class CharacterRange {
+            public static void main(String[] args) {
+                printCharactersBetween('A', 'P');
+            }
+        
+            static void printCharactersBetween(char start, char end) {
+                for (char c = start; c <= end; c++) {
+                    System.out.print(c + " ");
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="7">
+            <h2>7. Write a Java method to check whether a string is a valid password</h2>
+            <pre><code>
+        public class PasswordValidator {
+            public static void main(String[] args) {
+                System.out.println("Is valid password: " + isValidPassword("StrongP@ssw0rd"));
+            }
+        
+            static boolean isValidPassword(String password) {
+                return password.length() >= 8 && password.matches(".*[A-Z].*") &&
+                       password.matches(".*[a-z].*") && password.matches(".*[0-9].*") &&
+                       password.matches(".*[!@#$%^&*].*");
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="8">
+            <h2>8. Write a Java method to display the current date and time</h2>
+            <pre><code>
+        import java.time.LocalDateTime;
+        import java.time.format.DateTimeFormatter;
+        
+        public class CurrentDateTime {
+            public static void main(String[] args) {
+                displayCurrentDateTime();
+            }
+        
+            static void displayCurrentDateTime() {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                System.out.println("Current date and time: " + LocalDateTime.now().format(formatter));
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="9">
+            <h2>9. Write a Java method to find all twin prime numbers less than 100</h2>
+            <pre><code>
+        public class TwinPrimeFinder {
+            public static void main(String[] args) {
+                findTwinPrimes(100);
+            }
+        
+            static void findTwinPrimes(int limit) {
+                for (int i = 3; i < limit; i++) {
+                    if (isPrime(i) && isPrime(i + 2)) {
+                        System.out.println("(" + i + ", " + (i + 2) + ")");
+                    }
+                }
+            }
+        
+            static boolean isPrime(int num) {
+                if (num < 2) return false;
+                for (int i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i == 0) return false;
+                }
+                return true;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="10">
+            <h2>10. Write a Java method to count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative</h2>
+            <pre><code>
+        public class DigitCounter {
+            public static void main(String[] args) {
+                System.out.println("Number of digits: " + countDigits(123456));
+            }
+        
+            static int countDigits(int number) {
+                return String.valueOf(number).length();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="11">
+            <h2>11. Write a Java method that accepts three integers and checks whether they are consecutive or not. Returns true or false</h2>
+            <pre><code>
+        public class ConsecutiveChecker {
+            public static void main(String[] args) {
+                System.out.println("Are consecutive: " + areConsecutive(5, 6, 7));
+            }
+        
+            static boolean areConsecutive(int a, int b, int c) {
+                return (a + 1 == b && b + 1 == c) || (b + 1 == a && a + 1 == c) || (c + 1 == a && a + 1 == b);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="12">
+            <h2>12. Write a Java method that accepts three integers and returns true if one is the middle point between the other two integers, otherwise false</h2>
+            <pre><code>
+        public class MiddlePointChecker {
+            public static void main(String[] args) {
+                System.out.println("Is middle point: " + isMiddlePoint(3, 5, 4));
+            }
+        
+            static boolean isMiddlePoint(int a, int b, int c) {
+                return (a + c) / 2 == b || (a + b) / 2 == c || (b + c) / 2 == a;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="13">
+            <h2>13. Write a Java method that checks whether all the characters in a given string are vowels (a, e, i, o, u) or not. Return true if each character in the string is a vowel, otherwise return false</h2>
+            <pre><code>
+        public class VowelChecker {
+            public static void main(String[] args) {
+                System.out.println("All characters are vowels: " + allVowels("aeiou"));
+            }
+        
+            static boolean allVowels(String str) {
+                for (char c : str.toCharArray()) {
+                    if ("aeiou".indexOf(c) == -1) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+            </code></pre>
+        </section>
+        
+
+    </div>
+</body>
+</html>
+

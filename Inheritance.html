@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #ffe4f5;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the code block */
+        .content pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Wraps long lines */
+            margin: 0 auto; /* Centering the code block */
+            max-width: 80%; /* Setting a maximum width */
+        }
+
+        .content code {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .content pre {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java_codes.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+
+        <section id="1">
+            <h2>1. Write a Java method to find the smallest number among three numbers</h2>
+            <pre><code>
+        public class SmallestNumber {
+            public static int findSmallest(int num1, int num2, int num3) {
+                return Math.min(Math.min(num1, num2), num3);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="2">
+            <h2>2. Write a Java method to compute the average of three numbers</h2>
+            <pre><code>
+        public class AverageCalculator {
+            public static double computeAverage(int num1, int num2, int num3) {
+                return (num1 + num2 + num3) / 3.0;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="3">
+            <h2>3. Write a Java method to display the middle character of a string</h2>
+            <pre><code>
+        public class MiddleCharacter {
+            public static String getMiddleCharacter(String str) {
+                int len = str.length();
+                if (len % 2 == 0) {
+                    return String.valueOf(str.charAt(len / 2 - 1));
+                } else {
+                    return str.charAt(len / 2) + "" + str.charAt(len / 2);
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="4">
+            <h2>4. Write a Java method to count all the words in a string</h2>
+            <pre><code>
+        public class WordCounter {
+            public static int countWords(String str) {
+                if (str == null || str.isEmpty()) return 0;
+                String[] words = str.trim().split("\\s+");
+                return words.length;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="5">
+            <h2>5. Write a Java method to compute the future investment value at a given interest rate for a specified number of years</h2>
+            <pre><code>
+        public class InvestmentValue {
+            public static double futureInvestmentValue(double investment, double interestRate, int years) {
+                return investment * Math.pow(1 + interestRate / 100, years);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="6">
+            <h2>6. Write a Java method to print characters between two characters</h2>
+            <pre><code>
+        public class CharacterPrinter {
+            public static void printCharacters(char start, char end) {
+                for (char ch = start; ch <= end; ch++) {
+                    System.out.print(ch + " ");
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="7">
+            <h2>7. Write a Java method to check whether a string is a valid password</h2>
+            <pre><code>
+        public class PasswordValidator {
+            public static void main(String[] args) {
+                System.out.println("Is valid password: " + isValidPassword("StrongP@ssw0rd"));
+            }
+        
+            static boolean isValidPassword(String password) {
+                return password.length() >= 8 && password.matches(".*[A-Z].*") &&
+                       password.matches(".*[a-z].*") && password.matches(".*[0-9].*") &&
+                       password.matches(".*[!@#$%^&*].*");
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="8">
+            <h2>8. Write a Java method to display the current date and time</h2>
+            <pre><code>
+        import java.time.LocalDateTime;
+        import java.time.format.DateTimeFormatter;
+        
+        public class CurrentDateTime {
+            public static void main(String[] args) {
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+                System.out.println("Current Date and Time: " + dtf.format(now));
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="9">
+            <h2>9. Write a Java method to find all twin prime numbers less than 100</h2>
+            <pre><code>
+        public class TwinPrimes {
+            public static void findTwinPrimes() {
+                for (int i = 2; i < 100; i++) {
+                    if (isPrime(i) && isPrime(i + 2)) {
+                        System.out.println("(" + i + ", " + (i + 2) + ")");
+                    }
+                }
+            }
+        
+            static boolean isPrime(int num) {
+                if (num < 2) return false;
+                for (int i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i == 0) return false;
+                }
+                return true;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="10">
+            <h2>10. Write a Java method to count the number of digits in an integer with the value 2</h2>
+            <pre><code>
+        public class DigitCounter {
+            public static int countDigits(int num) {
+                return String.valueOf(num).length();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="11">
+            <h2>11. Write a Java method that accepts three integers and checks whether they are consecutive or not</h2>
+            <pre><code>
+        public class ConsecutiveChecker {
+            public static boolean areConsecutive(int a, int b, int c) {
+                int[] numbers = {a, b, c};
+                Arrays.sort(numbers);
+                return (numbers[2] - numbers[1] == 1 && numbers[1] - numbers[0] == 1);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="12">
+            <h2>12. Write a Java method that accepts three integers and returns true if one is the middle point between the other two integers</h2>
+            <pre><code>
+        public class MiddlePointChecker {
+            public static boolean isMiddlePoint(int a, int b, int c) {
+                return (a + c) / 2.0 == b;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="13">
+            <h2>13. Write a Java method that checks whether all the characters in a given string are vowels</h2>
+            <pre><code>
+        public class VowelChecker {
+            public static boolean areAllVowels(String str) {
+                for (char c : str.toCharArray()) {
+                    if (!"aeiouAEIOU".contains(String.valueOf(c))) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="14">
+            <h2>14. Write a Java program to reverse a string</h2>
+            <pre><code>
+        public class StringReverser {
+            public static String reverse(String str) {
+                return new StringBuilder(str).reverse().toString();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="15">
+            <h2>15. Write a Java program to check if a number is prime</h2>
+            <pre><code>
+        public class PrimeChecker {
+            public static boolean isPrime(int num) {
+                if (num < 2) return false;
+                for (int i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i == 0) return false;
+                }
+                return true;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="16">
+            <h2>16. Write a Java program to calculate the factorial of a number</h2>
+            <pre><code>
+        public class FactorialCalculator {
+            public static long factorial(int n) {
+                if (n == 0) return 1;
+                return n * factorial(n - 1);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="17">
+            <h2>17. Write a Java program to find the largest number in an array</h2>
+            <pre><code>
+        public class LargestInArray {
+            public static int findLargest(int[] arr) {
+                int largest = arr[0];
+                for (int num : arr) {
+                    if (num > largest) {
+                        largest = num;
+                    }
+                }
+                return largest;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="18">
+            <h2>18. Write a Java program to implement a simple calculator</h2>
+            <pre><code>
+        import java.util.Scanner;
+        
+        public class SimpleCalculator {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter first number: ");
+                double num1 = scanner.nextDouble();
+                System.out.print("Enter second number: ");
+                double num2 = scanner.nextDouble();
+                System.out.print("Enter operation (+, -, *, /): ");
+                char operation = scanner.next().charAt(0);
+                
+                double result;
+                switch (operation) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        result = num1 / num2;
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Invalid operation: " + operation);
+                }
+                System.out.println("Result: " + result);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="19">
+            <h2>19. Write a Java program to check if a string is a palindrome</h2>
+            <pre><code>
+        public class PalindromeChecker {
+            public static boolean isPalindrome(String str) {
+                String reversed = new StringBuilder(str).reverse().toString();
+                return str.equals(reversed);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="20">
+            <h2>20. Write a Java program to remove duplicates from an array</h2>
+            <pre><code>
+        import java.util.Arrays;
+        
+        public class RemoveDuplicates {
+            public static int[] removeDuplicates(int[] arr) {
+                return Arrays.stream(arr).distinct().toArray();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="21">
+            <h2>21. Write a Java program to merge two arrays</h2>
+            <pre><code>
+        public class ArrayMerger {
+            public static int[] mergeArrays(int[] arr1, int[] arr2) {
+                int[] merged = new int[arr1.length + arr2.length];
+                System.arraycopy(arr1, 0, merged, 0, arr1.length);
+                System.arraycopy(arr2, 0, merged, arr1.length, arr2.length);
+                return merged;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="22">
+            <h2>22. Write a Java program to count vowels in a string</h2>
+            <pre><code>
+        public class VowelCounter {
+            public static int countVowels(String str) {
+                int count = 0;
+                for (char c : str.toLowerCase().toCharArray()) {
+                    if ("aeiou".indexOf(c) != -1) {
+                        count++;
+                    }
+                }
+                return count;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="23">
+            <h2>23. Write a Java program to swap two numbers without using a temporary variable</h2>
+            <pre><code>
+        public class SwapNumbers {
+            public static void swap(int a, int b) {
+                a = a + b;
+                b = a - b;
+                a = a - b;
+                System.out.println("After swapping: a = " + a + ", b = " + b);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="24">
+            <h2>24. Write a Java program to find the sum of digits of an integer</h2>
+            <pre><code>
+        public class DigitSum {
+            public static int sumOfDigits(int num) {
+                int sum = 0;
+                while (num != 0) {
+                    sum += num % 10;
+                    num /= 10;
+                }
+                return sum;
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="25">
+            <h2>25. Write a Java program to implement bubble sort</h2>
+            <pre><code>
+        public class BubbleSort {
+            public static void bubbleSort(int[] arr) {
+                int n = arr.length;
+                for (int i = 0; i < n - 1; i++) {
+                    for (int j = 0; j < n - i - 1; j++) {
+                        if (arr[j] > arr[j + 1]) {
+                            // swap arr[j] and arr[j+1]
+                            int temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                        }
+                    }
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        <section id="26">
+            <h2>26. Write a Java program to generate Fibonacci sequence up to n terms</h2>
+            <pre><code>
+        public class Fibonacci {
+            public static void main(String[] args) {
+                int n = 10; // Number of terms
+                generateFibonacci(n);
+            }
+        
+            static void generateFibonacci(int n) {
+                int a = 0, b = 1;
+                System.out.print("Fibonacci Series: " + a + ", " + b);
+                for (int i = 2; i < n; i++) {
+                    int next = a + b;
+                    System.out.print(", " + next);
+                    a = b;
+                    b = next;
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #ffe4f5;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the code block */
+        .content pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Wraps long lines */
+            margin: 0 auto; /* Centering the code block */
+            max-width: 80%; /* Setting a maximum width */
+        }
+
+        .content code {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .content pre {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java_codes.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Java Programs</title>
+        </head>
+        <body>
+        
+        <section id="1">
+            <h2>1. Java Program to Access java.util.Date Class Through Import Keyword</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Date;
+        
+        public class CurrentDateImport {
+            public static void main(String[] args) {
+                Date currentDate = new Date();
+                System.out.println("Current Date: " + currentDate);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Current Date: Sun Oct 21 11:12:45 IST 2024
+            </code></pre>
+        </section>
+        
+        <section id="2">
+            <h2>2. Java Program to Access java.util.Date Class Through Qualified Way</h2>
+            <pre><code>
+        // Java Program
+        public class CurrentDateQualified {
+            public static void main(String[] args) {
+                java.util.Date currentDate = new java.util.Date();
+                System.out.println("Current Date: " + currentDate);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Current Date: Sun Oct 21 11:12:45 IST 2024
+            </code></pre>
+        </section>
+        
+        <section id="3">
+            <h2>3. Java Program to Inherit java.util.Date Class with Import Keyword</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Date;
+        
+        class CustomDate extends Date {
+            public void printDate() {
+                System.out.println("Current Date: " + this);
+            }
+        }
+        
+        public class CurrentDateImportInheritance {
+            public static void main(String[] args) {
+                CustomDate currentDate = new CustomDate();
+                currentDate.printDate();
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Current Date: Sun Oct 21 11:12:45 IST 2024
+            </code></pre>
+        </section>
+        
+        <section id="4">
+            <h2>4. Java Program to Inherit java.util.Date Class Through Qualified Way</h2>
+            <pre><code>
+        // Java Program
+        class CustomDateQualified extends java.util.Date {
+            public void printDate() {
+                System.out.println("Current Date: " + this);
+            }
+        }
+        
+        public class CurrentDateQualifiedInheritance {
+            public static void main(String[] args) {
+                CustomDateQualified currentDate = new CustomDateQualified();
+                currentDate.printDate();
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Current Date: Sun Oct 21 11:12:45 IST 2024
+            </code></pre>
+        </section>
+        
+        <section id="5">
+            <h2>5. Java Program to Create a Package with Multiple Default Classes</h2>
+            <pre><code>
+        // Create a directory structure for the package 'mypackage'
+        package mypackage;
+        
+        class ClassOne {
+            void display() {
+                System.out.println("Class One");
+            }
+        }
+        
+        class ClassTwo {
+            void display() {
+                System.out.println("Class Two");
+            }
+        }
+        
+        class ClassThree {
+            void display() {
+                System.out.println("Class Three");
+            }
+        }
+        
+        public class Main {
+            public static void main(String[] args) {
+                ClassOne obj1 = new ClassOne();
+                obj1.display();
+                
+                ClassTwo obj2 = new ClassTwo();
+                obj2.display();
+                
+                ClassThree obj3 = new ClassThree();
+                obj3.display();
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Class One
+        Class Two
+        Class Three
+            </code></pre>
+        </section>
+        
+        <section id="6">
+            <h2>6. Java Program to Create a Package with 4 Public Classes</h2>
+            <pre><code>
+        // Create a package named 'mypublicpackage'
+        package mypublicpackage;
+        
+        public class ClassA {
+            public void display() {
+                System.out.println("Class A");
+            }
+        }
+        
+        public class ClassB {
+            public void display() {
+                System.out.println("Class B");
+            }
+        }
+        
+        public class ClassC {
+            public void display() {
+                System.out.println("Class C");
+            }
+        }
+        
+        public class ClassD {
+            public void display() {
+                System.out.println("Class D");
+            }
+        }
+        
+        // Another file to access these classes
+        import mypublicpackage.*;
+        
+        public class Main {
+            public static void main(String[] args) {
+                ClassA a = new ClassA();
+                a.display();
+                
+                ClassB b = new ClassB();
+                b.display();
+                
+                ClassC c = new ClassC();
+                c.display();
+                
+                ClassD d = new ClassD();
+                d.display();
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Class A
+        Class B
+        Class C
+        Class D
+            </code></pre>
+        </section>
+        
+        <section id="7">
+            <h2>7. Java Program for Employee Payroll Processing Using Packages</h2>
+            <pre><code>
+        // File: Emp.java
+        package employee;
+        
+        public class Emp {
+            String name;
+            int empId;
+            String category;
+            double bpay, hra, da, npay, pf, grossPay, incomeTax, allowance;
+        
+            public void calculatePayroll() {
+                grossPay = bpay + hra + da + allowance;
+                npay = grossPay - (pf + incomeTax);
+            }
+        }
+        
+        // File: Emppay.java
+        import employee.Emp;
+        
+        public class Emppay {
+            public static void main(String[] args) {
+                Emp e = new Emp();
+                e.name = "John Doe";
+                e.empId = 101;
+                e.category = "Developer";
+                e.bpay = 50000;
+                e.hra = 10000;
+                e.da = 5000;
+                e.allowance = 2000;
+                e.pf = 3000;
+                e.incomeTax = 5000;
+                e.calculatePayroll();
+                System.out.println("Net Pay: " + e.npay);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Net Pay: 61700.0
+            </code></pre>
+        </section>
+        
+        <section id="8">
+            <h2>8. Java Program to Create a Package with Public Class and Protected Members</h2>
+            <pre><code>
+        // Create a package named 'protectedpackage'
+        package protectedpackage;
+        
+        public class ProtectedClass {
+            protected String message = "Protected Message";
+        
+            protected void displayMessage() {
+                System.out.println(message);
+            }
+        }
+        
+        // Another file to access this class
+        import protectedpackage.ProtectedClass;
+        
+        public class Main extends ProtectedClass {
+            public static void main(String[] args) {
+                Main obj = new Main();
+                obj.displayMessage();
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Protected Message
+            </code></pre>
+        </section>
+        
+        <section id="9">
+            <h2>9. Java Program to Create a Nested Package</h2>
+            <pre><code>
+        // Create a nested package i.e. c4.sample
+        package c4.sample;
+        
+        public class NestedClass {
+            public void display() {
+                System.out.println("Nested Package Class");
+            }
+        }
+        
+        // Another file to access this class
+        import c4.sample.NestedClass;
+        
+        public class Main {
+            public static void main(String[] args) {
+                NestedClass obj = new NestedClass();
+                obj.display();
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Nested Package Class
+            </code></pre>
+        </section>
+        
+        <section id="10">
+            <h2>10. Java Program to Create a Package with Public Class and Public Members</h2>
+            <pre><code>
+        // Create a package named 'publicpackage'
+        package publicpackage;
+        
+        public class PublicClass {
+            public String message = "Public Message";
+        
+            public void displayMessage() {
+                System.out.println(message);
+            }
+        }
+        
+        // Another file to access this class
+        import publicpackage.PublicClass;
+        
+        public class Main {
+            public static void main(String[] args) {
+                PublicClass obj = new PublicClass();
+                obj.displayMessage();
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Public Message
+            </code></pre>
+        </section>
+        
+        </body>
+        </html>
+        
+
+    </div>
+</body>
+</html>

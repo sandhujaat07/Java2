@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #ffe4f5;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the code block */
+        .content pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Wraps long lines */
+            margin: 0 auto; /* Centering the code block */
+            max-width: 80%; /* Setting a maximum width */
+        }
+
+        .content code {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .content pre {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java_codes.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+
+        <section id="1">
+            <h2>1. Create an applet showing the string "Hello World" which is embedded in the HTML page</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class HelloWorldApplet extends Applet {
+            public void paint(Graphics g) {
+                g.drawString("Hello World", 20, 20);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="2">
+            <h2>2. Create an applet showing the string "Hello World" which is executed by an appletviewer</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class HelloWorldAppletViewer extends Applet {
+            public void paint(Graphics g) {
+                g.drawString("Hello World", 20, 20);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="3">
+            <h2>3. Create an applet in Java to draw a circle</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class CircleApplet extends Applet {
+            public void paint(Graphics g) {
+                g.drawOval(50, 50, 100, 100);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="4">
+            <h2>4. Create an applet in Java to draw a polygon</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class PolygonApplet extends Applet {
+            public void paint(Graphics g) {
+                int[] xPoints = {50, 100, 150, 100};
+                int[] yPoints = {100, 50, 100, 150};
+                g.drawPolygon(xPoints, yPoints, 4);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="5">
+            <h2>5. Create an applet in Java to draw a rectangle</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class RectangleApplet extends Applet {
+            public void paint(Graphics g) {
+                g.drawRect(50, 50, 100, 50);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="6">
+            <h2>6. Create an applet in Java to draw a square</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class SquareApplet extends Applet {
+            public void paint(Graphics g) {
+                g.drawRect(50, 50, 100, 100);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="7">
+            <h2>7. Create an applet in Java to draw 4 concentric circles</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class ConcentricCirclesApplet extends Applet {
+            public void paint(Graphics g) {
+                g.drawOval(50, 50, 100, 100);
+                g.drawOval(75, 75, 50, 50);
+                g.drawOval(60, 60, 80, 80);
+                g.drawOval(90, 90, 20, 20);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="8">
+            <h2>8. Create an applet in Java to draw a line</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class LineApplet extends Applet {
+            public void paint(Graphics g) {
+                g.drawLine(50, 50, 200, 200);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="9">
+            <h2>9. Create an applet in Java to draw an oval</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class OvalApplet extends Applet {
+            public void paint(Graphics g) {
+                g.drawOval(50, 50, 150, 100);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="10">
+            <h2>10. Create an applet in Java to draw an arc</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class ArcApplet extends Applet {
+            public void paint(Graphics g) {
+                g.drawArc(50, 50, 100, 100, 0, 180);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="11">
+            <h2>11. Create an applet in Java to change the background color</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Color;
+        
+        public class BackgroundColorApplet extends Applet {
+            public void init() {
+                setBackground(Color.cyan);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="12">
+            <h2>12. Create an applet in Java to draw rounded rectangle</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        
+        public class RoundedRectangleApplet extends Applet {
+            public void paint(Graphics g) {
+                g.drawRoundRect(50, 50, 100, 50, 20, 20);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="13">
+            <h2>13. Create an applet in Java to set font</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Font;
+        import java.awt.Graphics;
+        
+        public class FontApplet extends Applet {
+            public void paint(Graphics g) {
+                Font font = new Font("Arial", Font.BOLD, 20);
+                g.setFont(font);
+                g.drawString("Hello with Font", 50, 50);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="14">
+            <h2>14. Create an applet to display a digital clock</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Graphics;
+        import java.util.Date;
+        
+        public class DigitalClockApplet extends Applet implements Runnable {
+            Thread t;
+            String time;
+        
+            public void start() {
+                t = new Thread(this);
+                t.start();
+            }
+        
+            public void run() {
+                while (true) {
+                    time = new Date().toString();
+                    repaint();
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {}
+                }
+            }
+        
+            public void paint(Graphics g) {
+                g.drawString(time, 50, 50);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="15">
+            <h2>15. Java Program to Draw a Smiling Face using Graphics Class Methods</h2>
+            <pre><code>
+        import java.applet.Applet;
+        import java.awt.Color;
+        import java.awt.Graphics;
+        
+        public class SmilingFaceApplet extends Applet {
+            public void paint(Graphics g) {
+                g.setColor(Color.YELLOW);
+                g.fillOval(50, 50, 200, 200); // Face
+        
+                g.setColor(Color.BLACK);
+                g.fillOval(90, 110, 20, 20);  // Left Eye
+                g.fillOval(190, 110, 20, 20); // Right Eye
+        
+                g.drawArc(110, 150, 80, 50, 0, -180); // Smile
+            }
+        }
+            </code></pre>
+        </section>
+        
+
+    </div>
+</body>
+</html>

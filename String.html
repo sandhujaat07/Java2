@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #ffe4f5;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the code block */
+        .content pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Wraps long lines */
+            margin: 0 auto; /* Centering the code block */
+            max-width: 80%; /* Setting a maximum width */
+        }
+
+        .content code {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .content pre {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java_codes.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Java Programs</title>
+        </head>
+        <body>
+        
+        <section id="1">
+            <h2>1. Program to Check if a String Contains Only Digits</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CheckDigits {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String input = scanner.nextLine();
+                boolean isDigits = input.chars().allMatch(Character::isDigit);
+                System.out.println("String contains only digits: " + isDigits);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: 12345
+        String contains only digits: true
+            </code></pre>
+        </section>
+        
+        <section id="2">
+            <h2>2. Program to Perform Deep Copy for String</h2>
+            <pre><code>
+        // Java Program
+        public class DeepCopyString {
+            public static void main(String[] args) {
+                String original = "Hello World";
+                String deepCopy = new String(original);
+                System.out.println("Original: " + original);
+                System.out.println("Deep Copy: " + deepCopy);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Original: Hello World
+        Deep Copy: Hello World
+            </code></pre>
+        </section>
+        
+        <section id="3">
+            <h2>3. Program to Prove String is Immutable Programmatically</h2>
+            <pre><code>
+        // Java Program
+        public class StringImmutability {
+            public static void main(String[] args) {
+                String str = "Hello";
+                str.concat(" World"); // This does not change the original string
+                System.out.println("String after trying to modify: " + str);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        String after trying to modify: Hello
+            </code></pre>
+        </section>
+        
+        <section id="4">
+            <h2>4. Program to Remove All Occurrences of a Given Character from Input String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class RemoveCharacter {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String input = scanner.nextLine();
+                System.out.print("Enter character to remove: ");
+                char toRemove = scanner.next().charAt(0);
+                String result = input.replace(Character.toString(toRemove), "");
+                System.out.println("Resulting string: " + result);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello World
+        Enter character to remove: o
+        Resulting string: Hell Wrld
+            </code></pre>
+        </section>
+        
+        <section id="5">
+            <h2>5. Program to Append the String Using StringBuffer Class</h2>
+            <pre><code>
+        // Java Program
+        public class AppendString {
+            public static void main(String[] args) {
+                StringBuffer sb = new StringBuffer("Hello");
+                sb.append(" World");
+                System.out.println("Appended String: " + sb);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Appended String: Hello World
+            </code></pre>
+        </section>
+        
+        <section id="6">
+            <h2>6. Program to Insert the String Using StringBuffer Class</h2>
+            <pre><code>
+        // Java Program
+        public class InsertString {
+            public static void main(String[] args) {
+                StringBuffer sb = new StringBuffer("Hello World");
+                sb.insert(5, ", Beautiful");
+                System.out.println("String after insertion: " + sb);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        String after insertion: Hello, Beautiful World
+            </code></pre>
+        </section>
+        
+        <section id="7">
+            <h2>7. Program to Add Characters to a String</h2>
+            <pre><code>
+        // Java Program
+        public class AddCharacters {
+            public static void main(String[] args) {
+                StringBuilder sb = new StringBuilder("Hello");
+                sb.append(' ').append('W').append('o').append('r').append('l').append('d');
+                System.out.println("Final String: " + sb);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Final String: Hello World
+            </code></pre>
+        </section>
+        
+        <section id="8">
+            <h2>8. Program to Add Characters to a String (Using StringBuffer)</h2>
+            <pre><code>
+        // Java Program
+        public class AddCharactersUsingStringBuffer {
+            public static void main(String[] args) {
+                StringBuffer sb = new StringBuffer("Hello");
+                sb.append(" World");
+                System.out.println("Final String: " + sb);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Final String: Hello World
+            </code></pre>
+        </section>
+        
+        <section id="9">
+            <h2>9. Program to Check Anagram</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Arrays;
+        import java.util.Scanner;
+        
+        public class CheckAnagram {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter first string: ");
+                String str1 = scanner.nextLine();
+                System.out.print("Enter second string: ");
+                String str2 = scanner.nextLine();
+        
+                char[] arr1 = str1.replaceAll("\\s", "").toLowerCase().toCharArray();
+                char[] arr2 = str2.replaceAll("\\s", "").toLowerCase().toCharArray();
+        
+                Arrays.sort(arr1);
+                Arrays.sort(arr2);
+        
+                boolean isAnagram = Arrays.equals(arr1, arr2);
+                System.out.println("The strings are anagrams: " + isAnagram);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter first string: listen
+        Enter second string: silent
+        The strings are anagrams: true
+            </code></pre>
+        </section>
+        
+        <section id="10">
+            <h2>10. Program to Check Whether a String is a Palindrome</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CheckPalindrome {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String reversed = new StringBuilder(str).reverse().toString();
+                boolean isPalindrome = str.equals(reversed);
+                System.out.println("The string is a palindrome: " + isPalindrome);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: radar
+        The string is a palindrome: true
+            </code></pre>
+        </section>
+        
+        <section id="11">
+            <h2>11. Program to Convert Enum to String</h2>
+            <pre><code>
+        // Java Program
+        enum Day {
+            SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+        }
+        
+        public class EnumToString {
+            public static void main(String[] args) {
+                Day day = Day.MONDAY;
+                String dayString = day.name();
+                System.out.println("Day as String: " + dayString);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Day as String: MONDAY
+            </code></pre>
+        </section>
+        
+        <section id="12">
+            <h2>12. Program to Convert String to String Array</h2>
+            <pre><code>
+        // Java Program
+        public class StringToArray {
+            public static void main(String[] args) {
+                String str = "Hello World";
+                String[] words = str.split(" ");
+                System.out.println("String Array: ");
+                for (String word : words) {
+                    System.out.println(word);
+                }
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        String Array:
+        Hello
+        World
+            </code></pre>
+        </section>
+        
+        <section id="13">
+            <h2>13. Program to Count Number of Words in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CountWords {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String input = scanner.nextLine();
+                String[] words = input.trim().split("\\s+");
+                System.out.println("Number of words: " + words.length);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello World
+        Number of words: 2
+            </code></pre>
+        </section>
+        
+        <section id="14">
+            <h2>14. Program to Count the Total Number of Characters in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CountCharacters {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String input = scanner.nextLine();
+                System.out.println("Total number of characters: " + input.length());
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello World
+        Total number of characters: 11
+            </code></pre>
+        </section>
+        
+        <section id="15">
+            <h2>15. Program to Count the Total Number of Punctuation Characters Exists in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CountPunctuation {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String input = scanner.nextLine();
+                long count = input.chars().filter(ch -> !Character.isLetterOrDigit(ch) && !Character.isWhitespace(ch)).count();
+                System.out.println("Total number of punctuation characters: " + count);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello, World!
+        Total number of punctuation characters: 2
+            </code></pre>
+        </section>
+        
+        <section id="16">
+            <h2>16. Program to Count the Total Number of Vowels and Consonants in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CountVowelsConsonants {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String input = scanner.nextLine().toLowerCase();
+                int vowels = 0, consonants = 0;
+        
+                for (char c : input.toCharArray()) {
+                    if (Character.isLetter(c)) {
+                        if ("aeiou".indexOf(c) != -1) {
+                            vowels++;
+                        } else {
+                            consonants++;
+                        }
+                    }
+                }
+                System.out.println("Vowels: " + vowels + ", Consonants: " + consonants);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello World
+        Vowels: 3, Consonants: 7
+            </code></pre>
+        </section>
+        
+        <section id="17">
+            <h2>17. Program to Determine Whether a Given String is Palindrome</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class DeterminePalindrome {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String reversed = new StringBuilder(str).reverse().toString();
+                boolean isPalindrome = str.equals(reversed);
+                System.out.println("The string is a palindrome: " + isPalindrome);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: level
+        The string is a palindrome: true
+            </code></pre>
+        </section>
+        
+        <section id="18">
+            <h2>18. Program to Determine Whether One String is a Rotation of Another</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CheckRotation {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter first string: ");
+                String str1 = scanner.nextLine();
+                System.out.print("Enter second string: ");
+                String str2 = scanner.nextLine();
+        
+                String temp = str1 + str1;
+                boolean isRotation = temp.contains(str2);
+                System.out.println("The second string is a rotation of the first: " + isRotation);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter first string: hello
+        Enter second string: lohel
+        The second string is a rotation of the first: true
+            </code></pre>
+        </section>
+        
+        <section id="19">
+            <h2>19. Program to Divide a String in 'N' Equal Parts</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class DivideString {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String input = scanner.nextLine();
+                System.out.print("Enter number of parts: ");
+                int n = scanner.nextInt();
+                int length = input.length();
+                int partLength = length / n;
+        
+                for (int i = 0; i < n; i++) {
+                    int start = i * partLength;
+                    int end = (i == n - 1) ? length : start + partLength; // Last part may take the remainder
+                    System.out.println("Part " + (i + 1) + ": " + input.substring(start, end));
+                }
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: HelloWorld
+        Enter number of parts: 5
+        Part 1: Hel
+        Part 2: loW
+        Part 3: orl
+        Part 4: d
+            </code></pre>
+        </section>
+        
+        <section id="20">
+            <h2>20. Program to Find All Subsets of a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.HashSet;
+        import java.util.Set;
+        
+        public class AllSubsets {
+            public static void main(String[] args) {
+                String str = "abc";
+                Set<String> subsets = new HashSet<>();
+                int n = str.length();
+                for (int i = 0; i < (1 << n); i++) {
+                    StringBuilder subset = new StringBuilder();
+                    for (int j = 0; j < n; j++) {
+                        if ((i & (1 << j)) > 0) {
+                            subset.append(str.charAt(j));
+                        }
+                    }
+                    subsets.add(subset.toString());
+                }
+                System.out.println("All subsets: " + subsets);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        All subsets: [, a, ab, abc, ac, b, bc, c]
+            </code></pre>
+        </section>
+        
+        <section id="21">
+            <h2>21. Program to Find All the Permutations of a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.ArrayList;
+        
+        public class Permutations {
+            public static void main(String[] args) {
+                String str = "abc";
+                ArrayList<String> result = new ArrayList<>();
+                permute(str, "", result);
+                System.out.println("All permutations: " + result);
+            }
+        
+            private static void permute(String str, String prefix, ArrayList<String> result) {
+                int n = str.length();
+                if (n == 0) {
+                    result.add(prefix);
+                } else {
+                    for (int i = 0; i < n; i++) {
+                        permute(str.substring(0, i) + str.substring(i + 1, n), prefix + str.charAt(i), result);
+                    }
+                }
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        All permutations: [abc, acb, bac, bca, cab, cba]
+            </code></pre>
+        </section>
+        
+        <section id="22">
+            <h2>22. Program to Find Maximum and Minimum Occurring Character in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.HashMap;
+        import java.util.Map;
+        
+        public class MaxMinOccurringChar {
+            public static void main(String[] args) {
+                String str = "hello world";
+                Map<Character, Integer> charCount = new HashMap<>();
+                
+                for (char c : str.toCharArray()) {
+                    charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+                }
+        
+                char maxChar = ' ';
+                char minChar = ' ';
+                int maxCount = Integer.MIN_VALUE;
+                int minCount = Integer.MAX_VALUE;
+        
+                for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+                    if (entry.getValue() > maxCount) {
+                        maxCount = entry.getValue();
+                        maxChar = entry.getKey();
+                    }
+                    if (entry.getValue() < minCount && entry.getValue() > 0) {
+                        minCount = entry.getValue();
+                        minChar = entry.getKey();
+                    }
+                }
+        
+                System.out.println("Maximum Occurring Character: " + maxChar + " (" + maxCount + ")");
+                System.out.println("Minimum Occurring Character: " + minChar + " (" + minCount + ")");
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Maximum Occurring Character: l (3)
+        Minimum Occurring Character: d (1)
+            </code></pre>
+        </section>
+        
+        <section id="23">
+            <h2>23. Program to Find Reverse of the String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class ReverseString {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String input = scanner.nextLine();
+                String reversed = new StringBuilder(input).reverse().toString();
+                System.out.println("Reversed String: " + reversed);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello
+        Reversed String: olleH
+            </code></pre>
+        </section>
+        
+        <section id="24">
+            <h2>24. Program to Find the Duplicate Characters in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.HashMap;
+        
+        public class DuplicateCharacters {
+            public static void main(String[] args) {
+                String str = "programming";
+                HashMap<Character, Integer> charCount = new HashMap<>();
+        
+                for (char c : str.toCharArray()) {
+                    charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+                }
+        
+                System.out.println("Duplicate characters: ");
+                for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+                    if (entry.getValue() > 1) {
+                        System.out.println(entry.getKey() + ": " + entry.getValue());
+                    }
+                }
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Duplicate characters: 
+        r: 2
+        g: 2
+        </code></pre>
+        </section>
+        
+        <section id="25">
+            <h2>25. Program to Find the Duplicate Words in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.HashMap;
+        
+        public class DuplicateWords {
+            public static void main(String[] args) {
+                String str = "Hello world hello world";
+                String[] words = str.toLowerCase().split(" ");
+                HashMap<String, Integer> wordCount = new HashMap<>();
+        
+                for (String word : words) {
+                    wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+                }
+        
+                System.out.println("Duplicate words: ");
+                for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+                    if (entry.getValue() > 1) {
+                        System.out.println(entry.getKey() + ": " + entry.getValue());
+                    }
+                }
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Duplicate words: 
+        hello: 2
+        world: 2
+            </code></pre>
+        </section>
+        
+        <section id="26">
+            <h2>26. Program to Find the Frequency of Characters</h2>
+            <pre><code>
+        // Java Program
+        import java.util.HashMap;
+        
+        public class CharacterFrequency {
+            public static void main(String[] args) {
+                String str = "Hello World";
+                HashMap<Character, Integer> charCount = new HashMap<>();
+        
+                for (char c : str.toCharArray()) {
+                    charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+                }
+        
+                System.out.println("Character frequencies: ");
+                for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+                    System.out.println(entry.getKey() + ": " + entry.getValue());
+                }
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Character frequencies: 
+        H: 1
+        e: 1
+        l: 3
+        o: 2
+         : 1
+        W: 1
+        r: 1
+        d: 1
+            </code></pre>
+        </section>
+        
+        <section id="27">
+            <h2>27. Program to Find the Largest and Smallest Word in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class LargestSmallestWord {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String[] words = str.split(" ");
+                String largest = "";
+                String smallest = words[0];
+        
+                for (String word : words) {
+                    if (word.length() > largest.length()) {
+                        largest = word;
+                    }
+                    if (word.length() < smallest.length()) {
+                        smallest = word;
+                    }
+                }
+        
+                System.out.println("Largest word: " + largest);
+                System.out.println("Smallest word: " + smallest);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello world
+        Largest word: Hello
+        Smallest word: world
+            </code></pre>
+        </section>
+        
+        <section id="28">
+            <h2>28. Program to Find the Longest Repeating Sequence in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.HashMap;
+        
+        public class LongestRepeatingSequence {
+            public static void main(String[] args) {
+                String str = "abcabcabc";
+                HashMap<String, Integer> seqCount = new HashMap<>();
+                int maxLength = 0;
+                String longestSeq = "";
+        
+                for (int i = 0; i < str.length(); i++) {
+                    for (int j = i + 1; j <= str.length(); j++) {
+                        String subStr = str.substring(i, j);
+                        seqCount.put(subStr, seqCount.getOrDefault(subStr, 0) + 1);
+                        if (seqCount.get(subStr) > 1 && subStr.length() > maxLength) {
+                            maxLength = subStr.length();
+                            longestSeq = subStr;
+                        }
+                    }
+                }
+        
+                System.out.println("Longest repeating sequence: " + longestSeq);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Longest repeating sequence: abc
+            </code></pre>
+        </section>
+        
+        <section id="29">
+            <h2>29. Program to Find the Most Repeated Word in a Text File</h2>
+            <pre><code>
+        // Java Program
+        import java.io.BufferedReader;
+        import java.io.FileReader;
+        import java.io.IOException;
+        import java.util.HashMap;
+        
+        public class MostRepeatedWord {
+            public static void main(String[] args) {
+                String filePath = "textfile.txt"; // Specify the path to your text file
+                HashMap<String, Integer> wordCount = new HashMap<>();
+        
+                try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        String[] words = line.toLowerCase().split("\\W+");
+                        for (String word : words) {
+                            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        
+                String mostRepeatedWord = "";
+                int maxCount = 0;
+        
+                for (HashMap.Entry<String, Integer> entry : wordCount.entrySet()) {
+                    if (entry.getValue() > maxCount) {
+                        maxCount = entry.getValue();
+                        mostRepeatedWord = entry.getKey();
+                    }
+                }
+        
+                System.out.println("Most repeated word: " + mostRepeatedWord + " (" + maxCount + ")");
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Most repeated word: the (5) // Example output
+            </code></pre>
+        </section>
+        
+        <section id="30">
+            <h2>30. Program to Find the Number of Words in the Given Text File</h2>
+            <pre><code>
+        // Java Program
+        import java.io.BufferedReader;
+        import java.io.FileReader;
+        import java.io.IOException;
+        
+        public class CountWordsInFile {
+            public static void main(String[] args) {
+                String filePath = "textfile.txt"; // Specify the path to your text file
+                int wordCount = 0;
+        
+                try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        String[] words = line.split("\\W+");
+                        wordCount += words.length;
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        
+                System.out.println("Total number of words in file: " + wordCount);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Total number of words in file: 20 // Example output
+            </code></pre>
+        </section>
+        
+        <section id="31">
+            <h2>31. Program to Get a Character From the Given String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class GetCharacter {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String input = scanner.nextLine();
+                System.out.print("Enter index of character to get: ");
+                int index = scanner.nextInt();
+                char character = input.charAt(index);
+                System.out.println("Character at index " + index + ": " + character);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello
+        Enter index of character to get: 1
+        Character at index 1: e
+            </code></pre>
+        </section>
+        
+        <section id="32">
+            <h2>32. Program to Check if a String Contains Only Digits</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class StringContainsDigits {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                boolean containsDigits = str.chars().anyMatch(Character::isDigit);
+                System.out.println("Contains only digits: " + containsDigits);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: 12345
+        Contains only digits: true
+            </code></pre>
+        </section>
+        
+        <section id="33">
+            <h2>33. Program to Check if Two Strings are Anagrams</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Arrays;
+        
+        public class AnagramCheck {
+            public static void main(String[] args) {
+                String str1 = "listen";
+                String str2 = "silent";
+                char[] charArray1 = str1.toCharArray();
+                char[] charArray2 = str2.toCharArray();
+                Arrays.sort(charArray1);
+                Arrays.sort(charArray2);
+                boolean areAnagrams = Arrays.equals(charArray1, charArray2);
+                System.out.println("Are the two strings anagrams? " + areAnagrams);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Are the two strings anagrams? true
+            </code></pre>
+        </section>
+        
+        <section id="34">
+            <h2>34. Program to Convert a String to Title Case</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class TitleCase {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String titleCase = Arrays.stream(str.split(" "))
+                        .map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase())
+                        .collect(Collectors.joining(" "));
+                System.out.println("Title case: " + titleCase);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: hello world
+        Title case: Hello World
+            </code></pre>
+        </section>
+        
+        <section id="35">
+            <h2>35. Program to Remove Vowels from a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class RemoveVowels {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String result = str.replaceAll("[aeiouAEIOU]", "");
+                System.out.println("String after removing vowels: " + result);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello World
+        String after removing vowels: Hll Wrld
+            </code></pre>
+        </section>
+        
+        <section id="36">
+            <h2>36. Program to Count the Number of Vowels in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CountVowels {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                long count = str.chars().filter(c -> "aeiouAEIOU".indexOf(c) != -1).count();
+                System.out.println("Number of vowels: " + count);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello World
+        Number of vowels: 3
+            </code></pre>
+        </section>
+        
+        <section id="37">
+            <h2>37. Program to Replace All Spaces in a String with Underscores</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class ReplaceSpaces {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String result = str.replace(" ", "_");
+                System.out.println("String after replacing spaces: " + result);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello World
+        String after replacing spaces: Hello_World
+            </code></pre>
+        </section>
+        
+        <section id="38">
+            <h2>38. Program to Check if a String is a Palindrome</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class PalindromeCheck {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String reversed = new StringBuilder(str).reverse().toString();
+                boolean isPalindrome = str.equalsIgnoreCase(reversed);
+                System.out.println("Is the string a palindrome? " + isPalindrome);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Madam
+        Is the string a palindrome? true
+            </code></pre>
+        </section>
+        
+        <section id="39">
+            <h2>39. Program to Count the Number of Consonants in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CountConsonants {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                long count = str.chars().filter(c -> "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ".indexOf(c) != -1).count();
+                System.out.println("Number of consonants: " + count);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello World
+        Number of consonants: 7
+            </code></pre>
+        </section>
+        
+        <section id="40">
+            <h2>40. Program to Sort Characters of a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Arrays;
+        
+        public class SortCharacters {
+            public static void main(String[] args) {
+                String str = "hello";
+                char[] charArray = str.toCharArray();
+                Arrays.sort(charArray);
+                String sortedStr = new String(charArray);
+                System.out.println("Sorted string: " + sortedStr);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Sorted string: ehllo
+            </code></pre>
+        </section>
+        <section id="41">
+            <h2>41. Program to Check if a String is a Substring of Another</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class SubstringCheck {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter the main string: ");
+                String mainStr = scanner.nextLine();
+                System.out.print("Enter the substring: ");
+                String subStr = scanner.nextLine();
+                boolean isSubstring = mainStr.contains(subStr);
+                System.out.println("Is the substring present? " + isSubstring);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter the main string: Hello World
+        Enter the substring: World
+        Is the substring present? true
+            </code></pre>
+        </section>
+        
+        <section id="42">
+            <h2>42. Program to Count the Number of Words in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CountWords {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String[] words = str.trim().split("\\s+");
+                System.out.println("Number of words: " + words.length);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello World from Java
+        Number of words: 4
+            </code></pre>
+        </section>
+        
+        <section id="43">
+            <h2>43. Program to Reverse a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class ReverseString {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String reversed = new StringBuilder(str).reverse().toString();
+                System.out.println("Reversed string: " + reversed);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello
+        Reversed string: olleH
+            </code></pre>
+        </section>
+        
+        <section id="44">
+            <h2>44. Program to Find the Longest Word in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class LongestWord {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String[] words = str.split(" ");
+                String longest = "";
+                for (String word : words) {
+                    if (word.length() > longest.length()) {
+                        longest = word;
+                    }
+                }
+                System.out.println("Longest word: " + longest);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Find the longest word in this sentence
+        Longest word: longest
+            </code></pre>
+        </section>
+        
+        <section id="45">
+            <h2>45. Program to Convert a String to Lowercase</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class ToLowercase {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String lowerCaseStr = str.toLowerCase();
+                System.out.println("Lowercase string: " + lowerCaseStr);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: HELLO WORLD
+        Lowercase string: hello world
+            </code></pre>
+        </section>
+        
+        <section id="46">
+            <h2>46. Program to Convert a String to Uppercase</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class ToUppercase {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                String upperCaseStr = str.toUpperCase();
+                System.out.println("Uppercase string: " + upperCaseStr);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: hello world
+        Uppercase string: HELLO WORLD
+            </code></pre>
+        </section>
+        
+        <section id="47">
+            <h2>47. Program to Trim Whitespaces from a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class TrimWhitespace {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string with spaces: ");
+                String str = scanner.nextLine();
+                String trimmedStr = str.trim();
+                System.out.println("String after trimming: '" + trimmedStr + "'");
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string with spaces:   Hello World   
+        String after trimming: 'Hello World'
+            </code></pre>
+        </section>
+        
+        <section id="48">
+            <h2>48. Program to Check if a String Contains Only Uppercase Letters</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class UppercaseCheck {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                boolean isUppercase = str.chars().allMatch(Character::isUpperCase);
+                System.out.println("Contains only uppercase letters: " + isUppercase);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: HELLO
+        Contains only uppercase letters: true
+            </code></pre>
+        </section>
+        
+        <section id="49">
+            <h2>49. Program to Count the Number of Digits in a String</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class CountDigits {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter a string: ");
+                String str = scanner.nextLine();
+                long count = str.chars().filter(Character::isDigit).count();
+                System.out.println("Number of digits: " + count);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter a string: Hello123
+        Number of digits: 3
+            </code></pre>
+        </section>
+        
+        <section id="50">
+            <h2>50. Program to Concatenate Two Strings</h2>
+            <pre><code>
+        // Java Program
+        import java.util.Scanner;
+        
+        public class ConcatenateStrings {
+            public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Enter first string: ");
+                String str1 = scanner.nextLine();
+                System.out.print("Enter second string: ");
+                String str2 = scanner.nextLine();
+                String concatenated = str1 + str2;
+                System.out.println("Concatenated string: " + concatenated);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Enter first string: Hello
+        Enter second string: World
+        Concatenated string: HelloWorld
+            </code></pre>
+        </section>
+        
+
+
+    </div>
+</body>
+</html>

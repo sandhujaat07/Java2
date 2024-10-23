@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #ffe4f5;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the code block */
+        .content pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Wraps long lines */
+            margin: 0 auto; /* Centering the code block */
+            max-width: 80%; /* Setting a maximum width */
+        }
+
+        .content code {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .content pre {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java_codes.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="1">
+            <h2>How to convert String to int</h2>
+            <pre><code>
+                public class StringToInt {
+                    public static void main(String[] args) {
+                        String str = "123";
+                        int number = Integer.parseInt(str);
+                        
+                        System.out.println("The integer value is: " + number);
+                    }
+                }
+                
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                The integer value is: 123
+            </code></pre>
+        </section>
+        <section id="2">
+            <h2>How to convert int to String</h2>
+            <pre><code>
+                public class IntToString {
+                    public static void main(String[] args) {
+                        int number = 123;
+                        String str = String.valueOf(number);
+                
+                        System.out.println("The string value is: " + str);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                The string value is: 123
+            </code></pre>
+        </section>
+        <section id="3">
+            <h2> How to convert String to long</h2>
+            <pre><code>
+                public class StringToLong {
+                    public static void main(String[] args) {
+                        String str = "1234567890";
+                        long number = Long.parseLong(str);
+                        
+                        System.out.println("The long value is: " + number);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                The long value is: 1234567890
+            </code></pre>
+        </section>
+        <section id="4">
+            <h2> How to convert long to String</h2>
+            <pre><code>
+                public class LongToString {
+                    public static void main(String[] args) {
+                        long number = 1234567890L;
+                        String str = String.valueOf(number);
+                
+                        System.out.println("The string value is: " + str);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                The string value is: 1234567890
+            </code></pre>
+        </section>
+        <section id="5">
+            <h2>How to convert String to float</h2>
+            <pre><code>
+                public class StringToFloat {
+                    public static void main(String[] args) {
+                        String str = "12.34";
+                        float number = Float.parseFloat(str);
+                
+                        System.out.println("The float value is: " + number);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                The float value is: 12.34
+            </code></pre>
+        </section>
+        <section id="6">
+            <h2>How to convert float to String</h2>
+            <pre><code>
+                public class FloatToString {
+                    public static void main(String[] args) {
+                        float number = 12.34f;
+                        String str = Float.toString(number);
+                
+                        System.out.println("The string value is: " + str);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                The string value is: 12.34
+            </code></pre>
+        </section>
+        <section id="7">
+            <h2> How to convert String to double</h2>
+            <pre><code>
+                public class StringToDouble {
+                    public static void main(String[] args) {
+                        String str = "123.456";
+                        double number = Double.parseDouble(str);
+                
+                        System.out.println("The double value is: " + number);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                The double value is: 123.456
+            </code></pre>
+        </section>
+        <section id="8">
+            <h2>8. How to convert double to String</h2>
+            <pre><code>
+        public class DoubleToString {
+            public static void main(String[] args) {
+                double number = 5.67;
+                String str = Double.toString(number);
+                System.out.println("Double as String: " + str);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="9">
+            <h2>9. How to convert String to Date</h2>
+            <pre><code>
+        import java.text.ParseException;
+        import java.text.SimpleDateFormat;
+        import java.util.Date;
+        
+        public class StringToDate {
+            public static void main(String[] args) {
+                String dateString = "2024-10-21";
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                try {
+                    Date date = formatter.parse(dateString);
+                    System.out.println("String as Date: " + date);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="10">
+            <h2>10. How to convert Date to String</h2>
+            <pre><code>
+        import java.text.SimpleDateFormat;
+        import java.util.Date;
+        
+        public class DateToString {
+            public static void main(String[] args) {
+                Date date = new Date();
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                String dateString = formatter.format(date);
+                System.out.println("Date as String: " + dateString);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="11">
+            <h2>11. How to convert String to char</h2>
+            <pre><code>
+        public class StringToChar {
+            public static void main(String[] args) {
+                String str = "Hello";
+                char ch = str.charAt(0);
+                System.out.println("First character: " + ch);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="12">
+            <h2>12. How to convert char to String</h2>
+            <pre><code>
+        public class CharToString {
+            public static void main(String[] args) {
+                char ch = 'A';
+                String str = Character.toString(ch);
+                System.out.println("Char as String: " + str);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="13">
+            <h2>13. How to convert String to Object</h2>
+            <pre><code>
+        public class StringToObject {
+            public static void main(String[] args) {
+                String str = "Hello";
+                Object obj = str; // Implicit conversion to Object
+                System.out.println("String as Object: " + obj);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="14">
+            <h2>14. How to convert Object to String</h2>
+            <pre><code>
+        public class ObjectToString {
+            public static void main(String[] args) {
+                Object obj = "Hello";
+                String str = obj.toString(); // Explicit conversion to String
+                System.out.println("Object as String: " + str);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="15">
+            <h2>15. How to convert int to long</h2>
+            <pre><code>
+        public class IntToLong {
+            public static void main(String[] args) {
+                int number = 100;
+                long longNumber = number; // Implicit conversion to long
+                System.out.println("Int as Long: " + longNumber);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="16">
+            <h2>16. How to convert long to int</h2>
+            <pre><code>
+        public class LongToInt {
+            public static void main(String[] args) {
+                long longNumber = 100L;
+                int number = (int) longNumber; // Explicit conversion to int
+                System.out.println("Long as Int: " + number);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="17">
+            <h2>17. How to convert int to double</h2>
+            <pre><code>
+        public class IntToDouble {
+            public static void main(String[] args) {
+                int number = 10;
+                double doubleNumber = number; // Implicit conversion to double
+                System.out.println("Int as Double: " + doubleNumber);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="18">
+            <h2>18. How to convert double to int</h2>
+            <pre><code>
+        public class DoubleToInt {
+            public static void main(String[] args) {
+                double doubleNumber = 10.5;
+                int number = (int) doubleNumber; // Explicit conversion to int
+                System.out.println("Double as Int: " + number);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="19">
+            <h2>19. How to convert char to int</h2>
+            <pre><code>
+        public class CharToInt {
+            public static void main(String[] args) {
+                char ch = 'A';
+                int number = ch; // Implicit conversion to int
+                System.out.println("Char as Int: " + number);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="20">
+            <h2>20. How to convert int to char</h2>
+            <pre><code>
+        public class IntToChar {
+            public static void main(String[] args) {
+                int number = 65;
+                char ch = (char) number; // Explicit conversion to char
+                System.out.println("Int as Char: " + ch);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="21">
+            <h2>21. How to convert String to boolean</h2>
+            <pre><code>
+        public class StringToBoolean {
+            public static void main(String[] args) {
+                String str = "true";
+                boolean bool = Boolean.parseBoolean(str);
+                System.out.println("String as Boolean: " + bool);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="22">
+            <h2>22. How to convert boolean to String</h2>
+            <pre><code>
+        public class BooleanToString {
+            public static void main(String[] args) {
+                boolean bool = true;
+                String str = Boolean.toString(bool);
+                System.out.println("Boolean as String: " + str);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="23">
+            <h2>23. How to convert Date to Timestamp</h2>
+            <pre><code>
+        import java.sql.Timestamp;
+        import java.util.Date;
+        
+        public class DateToTimestamp {
+            public static void main(String[] args) {
+                Date date = new Date();
+                Timestamp timestamp = new Timestamp(date.getTime());
+                System.out.println("Date as Timestamp: " + timestamp);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="24">
+            <h2>24. How to convert Timestamp to Date</h2>
+            <pre><code>
+        import java.sql.Timestamp;
+        
+        public class TimestampToDate {
+            public static void main(String[] args) {
+                Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+                Date date = new Date(timestamp.getTime());
+                System.out.println("Timestamp as Date: " + date);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="25">
+            <h2>25. How to convert Binary to Decimal</h2>
+            <pre><code>
+        public class BinaryToDecimal {
+            public static void main(String[] args) {
+                String binaryString = "1010";
+                int decimal = Integer.parseInt(binaryString, 2);
+                System.out.println("Binary as Decimal: " + decimal);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="26">
+            <h2>26. How to convert Decimal to Binary</h2>
+            <pre><code>
+        public class DecimalToBinary {
+            public static void main(String[] args) {
+                int decimal = 10;
+                String binaryString = Integer.toBinaryString(decimal);
+                System.out.println("Decimal as Binary: " + binaryString);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="27">
+            <h2>27. How to convert Hex to Decimal</h2>
+            <pre><code>
+        public class HexToDecimal {
+            public static void main(String[] args) {
+                String hexString = "A";
+                int decimal = Integer.parseInt(hexString, 16);
+                System.out.println("Hex as Decimal: " + decimal);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="28">
+            <h2>28. How to convert Decimal to Hex</h2>
+            <pre><code>
+        public class DecimalToHex {
+            public static void main(String[] args) {
+                int decimal = 10;
+                String hexString = Integer.toHexString(decimal);
+                System.out.println("Decimal as Hex: " + hexString);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="29">
+            <h2>29. How to convert Octal to Decimal</h2>
+            <pre><code>
+        public class OctalToDecimal {
+            public static void main(String[] args) {
+                String octalString = "12";
+                int decimal = Integer.parseInt(octalString, 8);
+                System.out.println("Octal as Decimal: " + decimal);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="30">
+            <h2>30. How to convert Decimal to Octal</h2>
+            <pre><code>
+        public class DecimalToOctal {
+            public static void main(String[] args) {
+                int decimal = 10;
+                String octalString = Integer.toOctalString(decimal);
+                System.out.println("Decimal as Octal: " + octalString);
+            }
+        }
+            </code></pre>
+        </section>
+        
+    </div>
+</body>
+</html>

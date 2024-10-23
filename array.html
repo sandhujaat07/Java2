@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe4f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #ffe4f5;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Styling for the code block */
+        .content pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Wraps long lines */
+            margin: 0 auto; /* Centering the code block */
+            max-width: 80%; /* Setting a maximum width */
+        }
+
+        .content code {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .content pre {
+                max-width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="java_codes.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="1">
+            <h2>1. Program to copy all elements of one array into another array</h2>
+            <pre><code>
+public class CopyArray {
+    public static void main(String[] args) {
+        int[] originalArray = {1, 2, 3, 4, 5};
+
+        int[] newArray = new int[originalArray.length];
+
+        for (int i = 0; i < originalArray.length; i++) {
+            newArray[i] = originalArray[i];
+        }
+        System.out.println("Elements of the new array:");
+        for (int element : newArray) {
+            System.out.print(element + " ");
+        }
+    }
+}
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+Elements of the new array:
+1 2 3 4 5 
+            </code></pre>
+        </section>
+        <section id="2">
+        </section>
+            <h2>2. Program to find the frequency of each element in the array</h2>
+            <pre><code>
+                public class Frequency {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 2, 3, 1, 4, 1};
+                        int[] freq = new int[100];
+                
+                        for (int i : arr) {
+                            freq[i]++;
+                        }
+                
+                        for (int i = 0; i < freq.length; i++) {
+                            if (freq[i] > 0) {
+                                System.out.println(i + ": " + freq[i]);
+                            }
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                1: 3
+                2: 2
+                3: 1
+                4: 1
+            </code></pre>
+        </section>
+        <section id="3">
+        </section>
+            <h2>3. Program to left rotate the elements of an array</h2>
+            <pre><code>
+                public class LeftRotate {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 3, 4, 5};
+                        int n = arr.length;
+                        int first = arr[0];
+                
+                        for (int i = 0; i < n - 1; i++) {
+                            arr[i] = arr[i + 1];
+                        }
+                
+                        arr[n - 1] = first;
+                
+                        for (int i : arr) {
+                            System.out.print(i + " ");
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                2 3 4 5 1 
+            </code></pre>
+        </section>
+        <section id="4">
+        </section>
+            <h2>4. Program to print the duplicate elements of an array</h2>
+            <pre><code>
+                public class DuplicateElements {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 3, 2, 4, 3, 5, 1};
+                        int n = arr.length;
+                
+                        for (int i = 0; i < n; i++) {
+                            for (int j = i + 1; j < n; j++) {
+                                if (arr[i] == arr[j]) {
+                                    System.out.println(arr[i]);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                1
+                2
+                3
+            </code></pre>
+        </section>
+        <section id="5">
+        </section>
+            <h2>5. Program to print the elements of an array
+            </h2>
+            <pre><code>
+                public class PrintArray {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 3, 4, 5};
+                
+                        for (int i : arr) {
+                            System.out.print(i + " ");
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                1 2 3 4 5 
+            </code></pre>
+        </section>
+        <section id="6">
+        </section>
+            <h2>6. Program to print the elements of an array in reverse order</h2>
+            <pre><code>
+                public class ReverseArray {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 3, 4, 5};
+                        int n = arr.length;
+                
+                        for (int i = n - 1; i >= 0; i--) {
+                            System.out.print(arr[i] + " ");
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                5 4 3 2 1 
+            </code></pre>
+        </section>
+        <section id="7">
+        </section>
+            <h2>7. Program to print the elements of an array present on even position</h2>
+            <pre><code>
+                public class EvenPositionArray {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 3, 4, 5, 6};
+                
+                        for (int i = 1; i < arr.length; i += 2) {
+                            System.out.print(arr[i] + " ");
+                        }
+                    }
+                }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                2 4 6     
+            </code></pre>
+        </section>
+        <section id="8">
+        </section>
+            <h2>8. Program to print the elements of an array present on odd position</h2>
+            <pre><code>
+                public class OddPositionArray {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 3, 4, 5, 6};
+                
+                        for (int i = 0; i < arr.length; i += 2) {
+                            System.out.print(arr[i] + " ");
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                1 3 5 
+            </code></pre>
+        </section>
+        <section id="9">
+            <h2>9. Program to print the largest element in an array</h2>
+            <pre><code>
+                public class LargestElement {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 3, 4, 5};
+                        int max = arr[0];
+                
+                        for (int i = 1; i < arr.length; i++) {
+                            if (arr[i] > max) {
+                                max = arr[i];
+                            }
+                        }
+                
+                        System.out.println("Largest element: " + max);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Largest element: 5
+            </code></pre>
+        </section>
+        <section id="10">
+            <h2>10. Program to print the smallest element in an array</h2>
+            <pre><code>
+                public class SmallestElement {
+                    public static void main(String[] args) {
+                        int[] arr = {3, 5, 1, 8, 2};
+                        int min = arr[0];
+                
+                        for (int i = 1; i < arr.length; i++) {
+                            if (arr[i] < min) {
+                                min = arr[i];
+                            }
+                        }
+                
+                        System.out.println("Smallest element: " + min);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Smallest element: 1
+            </code></pre>
+        </section>
+        <section id="11">
+            <h2>11. Program to print the number of elements present in an array</h2>
+            <pre><code>
+                public class ArraySize {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 3, 4, 5};
+                
+                        System.out.println("Number of elements: " + arr.length);
+                    }
+                }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Number of elements: 5
+            </code></pre>
+        </section>
+        <section id="12">
+            <h2>12. Program to print the sum of all the items of the array</h2>
+            <pre><code>
+                public class SumArray {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 3, 4, 5};
+                        int sum = 0;
+                
+                        for (int i : arr) {
+                            sum += i;
+                        }
+                
+                        System.out.println("Sum of all elements: " + sum);
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                Sum of all elements: 15
+            </code></pre>
+        </section>
+        <section id="13">
+            <h2>113. Program to right rotate the elements of an array</h2>
+            <pre><code>
+                public class RightRotate {
+                    public static void main(String[] args) {
+                        int[] arr = {1, 2, 3, 4, 5};
+                        int n = arr.length;
+                        int last = arr[n - 1];
+                
+                        for (int i = n - 1; i > 0; i--) {
+                            arr[i] = arr[i - 1];
+                        }
+                
+                        arr[0] = last;
+                
+                        for (int i : arr) {
+                            System.out.print(i + " ");
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                5 1 2 3 4 
+            </code></pre>
+        </section>
+
+        <section id="14">
+            <h2>14. Program to sort the elements of an array in ascending order</h2>
+            <pre><code>
+                public class SortArray {
+                    public static void main(String[] args) {
+                        int[] arr = {5, 2, 8, 1, 3};
+                        int n = arr.length;
+                
+                        for (int i = 0; i < n - 1; i++) {
+                            for (int j = i + 1; j < n; j++) {
+                                if (arr[i] > arr[j]) {
+                                    int temp = arr[i];
+                                    arr[i] = arr[j];
+                                    arr[j] = temp;
+                                }
+                            }
+                        }
+                
+                        for (int i : arr) {
+                            System.out.print(i + " ");
+                        }
+                    }
+                }
+                
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+                1 2 3 5 8
+            </code></pre>
+        </section>
+        <section id="15">
+            <h2>15. Program to sort the elements of an array in descending order</h2>
+            <pre><code>
+        public class DescendingOrder {
+            public static void main(String[] args) {
+                int[] arr = {5, 2, 8, 7, 1};
+                int temp;
+        
+                for (int i = 0; i < arr.length; i++) {
+                    for (int j = i + 1; j < arr.length; j++) {
+                        if (arr[i] < arr[j]) {
+                            temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+        
+                System.out.println("Array in descending order:");
+                for (int i : arr) {
+                    System.out.print(i + " ");
+                }
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Array in descending order:
+        8 7 5 2 1 
+            </code></pre>
+        </section>
+        
+        <section id="16">
+            <h2>16. Program to Find 3rd Largest Number in an array</h2>
+            <pre><code>
+        public class ThirdLargest {
+            public static void main(String[] args) {
+                int[] arr = {5, 2, 8, 7, 1, 10};
+                int temp;
+        
+                for (int i = 0; i < arr.length; i++) {
+                    for (int j = i + 1; j < arr.length; j++) {
+                        if (arr[i] < arr[j]) {
+                            temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+        
+                System.out.println("The 3rd largest number is: " + arr[2]);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        The 3rd largest number is: 7
+            </code></pre>
+        </section>
+        
+        <section id="17">
+            <h2>17. Program to Find 2nd Largest Number in an array</h2>
+            <pre><code>
+        public class SecondLargest {
+            public static void main(String[] args) {
+                int[] arr = {5, 2, 8, 7, 1, 10};
+                int temp;
+        
+                for (int i = 0; i < arr.length; i++) {
+                    for (int j = i + 1; j < arr.length; j++) {
+                        if (arr[i] < arr[j]) {
+                            temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+        
+                System.out.println("The 2nd largest number is: " + arr[1]);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        The 2nd largest number is: 8
+            </code></pre>
+        </section>
+        
+        <section id="18">
+            <h2>18. Program to Find Largest Number in an array</h2>
+            <pre><code>
+        public class LargestNumber {
+            public static void main(String[] args) {
+                int[] arr = {5, 2, 8, 7, 1, 10};
+                int max = arr[0];
+        
+                for (int i = 1; i < arr.length; i++) {
+                    if (arr[i] > max) {
+                        max = arr[i];
+                    }
+                }
+        
+                System.out.println("The largest number is: " + max);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        The largest number is: 10
+            </code></pre>
+        </section>
+        
+        <section id="19">
+            <h2>19. Program to Find 2nd Smallest Number in an array</h2>
+            <pre><code>
+        public class SecondSmallest {
+            public static void main(String[] args) {
+                int[] arr = {5, 2, 8, 7, 1, 10};
+                int temp;
+        
+                for (int i = 0; i < arr.length; i++) {
+                    for (int j = i + 1; j < arr.length; j++) {
+                        if (arr[i] > arr[j]) {
+                            temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+        
+                System.out.println("The 2nd smallest number is: " + arr[1]);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        The 2nd smallest number is: 2
+            </code></pre>
+        </section>
+        
+        <section id="20">
+            <h2>20. Program to Find Smallest Number in an array</h2>
+            <pre><code>
+        public class SmallestNumber {
+            public static void main(String[] args) {
+                int[] arr = {5, 2, 8, 7, 1, 10};
+                int min = arr[0];
+        
+                for (int i = 1; i < arr.length; i++) {
+                    if (arr[i] < min) {
+                        min = arr[i];
+                    }
+                }
+        
+                System.out.println("The smallest number is: " + min);
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        The smallest number is: 1
+            </code></pre>
+        </section>
+        <section id="21">
+            <h2>21. Program to Remove Duplicate Element in an array</h2>
+            <pre><code>
+        public class RemoveDuplicates {
+            public static void main(String[] args) {
+                int[] arr = {1, 2, 2, 3, 4, 4, 5};
+                int length = arr.length;
+                
+                for (int i = 0; i < length; i++) {
+                    for (int j = i + 1; j < length; j++) {
+                        if (arr[i] == arr[j]) {
+                            for (int k = j; k < length - 1; k++) {
+                                arr[k] = arr[k + 1];
+                            }
+                            length--;
+                            j--;
+                        }
+                    }
+                }
+        
+                System.out.println("Array after removing duplicates:");
+                for (int i = 0; i < length; i++) {
+                    System.out.print(arr[i] + " ");
+                }
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Array after removing duplicates:
+        1 2 3 4 5 
+            </code></pre>
+        </section>
+        
+        <section id="22">
+            <h2>22. Program to Print Odd and Even Numbers from an array</h2>
+            <pre><code>
+        public class OddEvenNumbers {
+            public static void main(String[] args) {
+                int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        
+                System.out.println("Even numbers:");
+                for (int i : arr) {
+                    if (i % 2 == 0) {
+                        System.out.print(i + " ");
+                    }
+                }
+        
+                System.out.println("\nOdd numbers:");
+                for (int i : arr) {
+                    if (i % 2 != 0) {
+                        System.out.print(i + " ");
+                    }
+                }
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Even numbers:
+        2 4 6 
+        Odd numbers:
+        1 3 5 7 
+            </code></pre>
+        </section>
+        
+        <section id="23">
+            <h2>23. How to Sort an Array in Java</h2>
+            <pre><code>
+        import java.util.Arrays;
+        
+        public class SortArray {
+            public static void main(String[] args) {
+                int[] arr = {5, 2, 8, 7, 1};
+                Arrays.sort(arr);
+        
+                System.out.println("Sorted array:");
+                for (int i : arr) {
+                    System.out.print(i + " ");
+                }
+            }
+        }
+            </code></pre>
+            <h3>Output</h3>
+            <pre><code>
+        Sorted array:
+        1 2 5 7 8 
+            </code></pre>
+        </section>
+        
+    </div>
+</body>
+</html>
